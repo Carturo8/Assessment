@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "2040c962-b976-4171-8859-e1bbb281b79d",
+		"name": "API Collection - Clients, Invoices, Transactions, Reports",
+		"description": "CRUD para clients, invoices y transactions + reportes.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47072133",
+		"_collection_link": "https://carturo8-183482.postman.co/workspace/Carlos-Rojas's-Workspace~b163e749-7dc2-473e-8b4f-b0bac30b3db3/collection/47072133-2040c962-b976-4171-8859-e1bbb281b79d?action=share&source=collection_link&creator=47072133"
+	},
+	"item": [
+		{
+			"name": "Clients",
+			"item": [
+				{
+					"name": "Get all clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/clients",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get client by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/clients/123456789",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"clients",
+								"123456789"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": 123456789,\n  \"client_name\": \"John Doe\",\n  \"client_address\": \"123 Main St\",\n  \"client_phone\": \"+1-555-1234\",\n  \"client_email\": \"john.doe@example.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/clients",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_name\": \"John Doe Updated\",\n  \"client_address\": \"456 Updated Ave\",\n  \"client_phone\": \"+1-555-9999\",\n  \"client_email\": \"john.updated@example.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/clients/123456789",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"clients",
+								"123456789"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/clients/123456789",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"clients",
+								"123456789"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoices",
+			"item": [
+				{
+					"name": "Get all invoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/invoices",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"invoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get invoice by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/invoices/INV-1001",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"invoices",
+								"INV-1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create invoice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"invoice_id\": \"INV-1001\",\n  \"invoice_date\": \"2024-06-01\",\n  \"invoice_amount\": 250.50,\n  \"invoice_paid\": 100.00,\n  \"client_id\": 123456789\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/invoices",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"invoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update invoice",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"invoice_date\": \"2024-06-15\",\n  \"invoice_amount\": 300.00,\n  \"invoice_paid\": 150.00,\n  \"client_id\": 123456789\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/invoices/INV-1001",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"invoices",
+								"INV-1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete invoice",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/invoices/INV-1001",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"invoices",
+								"INV-1001"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "Get all transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get transaction by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/transactions/TXN101",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"TXN101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"transaction_id\": \"TXN101\",\n  \"transaction_date\": \"2024-06-21\",\n  \"transaction_amount\": 50.25,\n  \"transaction_status\": \"PAID\",\n  \"transaction_type\": \"CARD\",\n  \"client_id\": 123456789,\n  \"platform_id\": 1,\n  \"invoice_id\": \"INV-1001\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update transaction",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"transaction_date\": \"2024-06-22\",\n  \"transaction_amount\": 60.00,\n  \"transaction_status\": \"PAID\",\n  \"transaction_type\": \"TRANSFER\",\n  \"client_id\": 123456789,\n  \"platform_id\": 1,\n  \"invoice_id\": \"INV-1001\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/transactions/TXN101",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"TXN101"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete transaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/transactions/TXN101",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"transactions",
+								"TXN101"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Clients total paid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/reports/clients/total-paid",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"clients",
+								"total-paid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invoices pending balance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/reports/invoices/pending-balance",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"invoices",
+								"pending-balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transactions by platform",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/reports/transactions/by-platform?platform={{platform}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"transactions",
+								"by-platform"
+							],
+							"query": [
+								{
+									"key": "platform",
+									"value": "{{platform}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "client_id",
+			"value": "123456789"
+		},
+		{
+			"key": "invoice_id",
+			"value": "INV-1001"
+		},
+		{
+			"key": "transaction_id",
+			"value": "1"
+		},
+		{
+			"key": "platform",
+			"value": "Nequi"
+		}
+	]
+}
